@@ -1,26 +1,108 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-ivory: #F7F1E5;
+  --color-marble: #FFFDF8;
+  --color-stone: #E4DAC6;
+  --color-verde-profondo: #1F3A2E;
+  --color-verde-light: #2C5242;
+  --color-oro-antico: #B8975A;
+  --color-gold: #B8975A;
+  --color-terracotta: #B5532F;
+  --color-espresso: #2A1F1A;
+  --color-taupe: #7A6B5D;
+  --color-olive: #5E7A3A;
+  --color-amber: #C98A1B;
+  --color-lagoon: #2F6F7A;
+
+  --font-serif: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  --font-sans: var(--font-inter), "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --background: #F7F1E5;
+  --surface: #FFFDF8;
+  --border-stone: #E4DAC6;
+  --text-primary: #2A1F1A;
+  --text-secondary: #7A6B5D;
+  --verde: #1F3A2E;
+  --verde-light: #2C5242;
+  --gold: #B8975A;
+  --terracotta: #B5532F;
+  --olive: #5E7A3A;
+  --amber: #C98A1B;
+  --lagoon: #2F6F7A;
+}
+
+.dark {
+  --background: #1B1511;
+  --surface: #241D17;
+  --border-stone: #382C23;
+  --text-primary: #F7F1E5;
+  --text-secondary: #A89B8E;
+  --verde: #2C5242;
+  --verde-light: #386753;
+  --gold: #D4B06F;
+  --terracotta: #C96642;
+  --olive: #76994B;
+  --amber: #E09F2B;
+  --lagoon: #3D8996;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--background);
+  color: var(--text-primary);
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-serif {
+  font-family: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+}
+
+.font-sans {
+  font-family: var(--font-inter), "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #E4DAC6;
+  border-radius: 9999px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #382C23;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B8975A;
+}
+
+/* Focus styles */
+:focus-visible {
+  outline: 2px solid #B8975A;
+  outline-offset: 1px;
+}
+
+/* Italian hairline accents */
+.gold-hairline {
+  position: relative;
+}
+.gold-hairline::after {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 2px;
+  background-color: #B8975A;
+  margin-top: 6px;
 }
